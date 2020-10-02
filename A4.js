@@ -36,6 +36,7 @@ function textTransformation(text) {
     text = replaceSymbol(text, '%');
     text = replaceSymbol(text, '>');
     text = replaceSymbol(text, '<');
+    return text;
 }
 
 function isPalindrom(text) {
