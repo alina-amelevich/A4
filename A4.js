@@ -43,16 +43,16 @@ function isPalindrom(text) {
     let indStart = 0;
     let indEnd = text.length - 1;   //индексы строки идущие от начала и от конца
     let logicValue = true;
-    
-    recursion(indStart, indEnd);
 
-    function recursion(indStart, indEnd) {
-        while (indStart < indEnd) {
+    recursionFunc(indStart, indEnd);
+
+    function recursionFunc(indStart, indEnd) {
+        if (indStart < indEnd) {
             if (text[indStart] !== text[indEnd]) {
                 logicValue = false;
                 return logicValue;
             }
-            recursion((indStart + 1), (indEnd - 1));
+            recursionFunc((indStart + 1), (indEnd - 1));
         }
     }
     return logicValue;
