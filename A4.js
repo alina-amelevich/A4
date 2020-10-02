@@ -40,7 +40,7 @@ function textTransformation(text) {
 
 function isPalindrom(text) {
     let indStart = 0;
-    let indEnd = text.length - 1; //индексы строки идущие от начала и от конца
+    let indEnd = text.length - 1;   //индексы строки идущие от начала и от конца
     let logicValue = true;
 
     function recursion(indStart, indEnd) {
