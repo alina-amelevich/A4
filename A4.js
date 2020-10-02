@@ -48,7 +48,7 @@ function isPalindrom(text) {
         while (indStart >= indEnd) {
             if (text[indStart] !== text[indEnd]) {
                 logicValue = false;
-                return;
+                return logicValue;
             }
             recursion((indStart + 1), (indEnd - 1));
         }
