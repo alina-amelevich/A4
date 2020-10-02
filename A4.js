@@ -1,6 +1,6 @@
 'use strict'
 
-function replaceSymbols(text, symb, sub = '') { 
+function replaceSymbol(text, symb, sub = '') { 
 // функции передается текст/фраза/слово, символ который нужно заменить и символ, на который нужно заменить
     while (text.indexOf(symb) !== -1) {
         text.replace(symb, sub);
@@ -10,9 +10,9 @@ function replaceSymbols(text, symb, sub = '') {
 
 function textTransformation(text) {
 //функция получиит первончальную фразу, приведет к ниж.регистру, 
-//затем через вызов ф-ции replaceSymbols удалит все символы, которые должны игнорироваться, заменит ё на е.
+//затем через вызов ф-ции replaceSymbol удалит все символы, которые должны игнорироваться, заменит ё на е.
     text = text.toLowerCase();
-    text = replaceSymbols(text, ' ');
+    text = replaceSymbol(text, ' ');
     text = replaceSymbol(text, '\n');
     text = replaceSymbol(text, '\t');
     text = replaceSymbol(text, '\r');
