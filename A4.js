@@ -45,7 +45,7 @@ function isPalindrom(text) {
     let logicValue = true;
 
     function recursion(indStart, indEnd) {
-        while (indStart >= indEnd) {
+        while (indStart < indEnd) {
             if (text[indStart] !== text[indEnd]) {
                 logicValue = false;
                 return logicValue;
