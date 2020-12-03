@@ -58,7 +58,7 @@ function isPalindromRecursion(text, indStart, indEnd) {
             return false;
         }
     }
-
+}
 //ЗАПУСК
 function runProgram() {
     let userText = prompt('Введите фразу, которую желаете проверить');
