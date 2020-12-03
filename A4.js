@@ -39,30 +39,31 @@ function textTransformation(text) {
     return text;
 }
 
-function isPalindrom(text) {
-    let indStart = 0;
-    let indEnd = text.length - 1;   //индексы строки идущие от начала и от конца
-    let logicValue = true;
+function isPalindromRecursion(text, indStart, indEnd) {
+  //indStart, indEnd - индексы строки идущие от начала и от конца
+    // let logicValue = true;
 
-    recursionFunc(indStart, indEnd);
-
-    function recursionFunc(indStart, indEnd) {
-        if (indStart < indEnd) {
-            if (text[indStart] !== text[indEnd]) {
-                logicValue = false;
-                return logicValue;
-            }
-            recursionFunc((indStart + 1), (indEnd - 1));
+    // if (indStart < indEnd) {
+    //     if (text[indStart] !== text[indEnd]) {
+    //         logicValue = false;
+    //         return logicValue;
+    //     }
+    // }
+    if (indStart >= indEnd) {
+        return true;
+    } else {
+        if (text[indStart] === text[indEnd]) {
+            return isPalindromRecursion(text, (indStart + 1), (indEnd - 1));
+        } else {
+            return false;
         }
     }
-    return logicValue;
-}
 
 //ЗАПУСК
 function runProgram() {
     let userText = prompt('Введите фразу, которую желаете проверить');
     let changedText = textTransformation(userText);
-    let value = (isPalindrom(changedText) == true) ? 'палиндром' : 'не палиндром';  
+    let value = (isPalindromRecursion(changedText, 0, changedText.length-1) == true) ? 'палиндром' : 'не палиндром';  
     //если ф-ция isPalindromRecursion, куда отправили фразу юзера, 
     // возвращает true - в переменную кладется значение "палиндром", если нет (false) - значение "не палиндром"
     alert('Фраза ' + '"' + userText + '"' + ' - это ' + value);
